@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 3: Hotel View</title>
+    <style>
+
+        :root { --primary-blue: #0938d1; --border-color: #dee2e6; }
+        body { font-family: sans-serif; margin: 0; }
+        header { display: flex; border-bottom: 1px solid var(--border-color); background: #f8f9fa; }
+        .nav-item { padding: 15px 25px; border-right: 1px solid var(--border-color); font-weight: bold; }
+        .search-container { padding: 10px 20px; display: flex; justify-content: flex-end; gap: 10px; border-bottom: 1px solid var(--border-color); }
+        .main-layout { display: flex; min-height: 80vh; }
+        .sidebar { width: 280px; padding: 20px; border-right: 1px solid var(--border-color); }
+        .content-grid { flex-grow: 1; padding: 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+        .hotel-card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; }
+        .btn-search { background: var(--primary-blue); color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; }
+    
+    </style>
+</head>
+<body>
+    <header><div class="nav-item">Hotel Viewer (Lab 3)</div></header>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Пошук назви...">
+        <button class="btn-search" onclick="handleSearch()">Search</button>
+    </div>
+
+    <div class="main-layout">
+        <aside class="sidebar">
+            <label><input type="checkbox" id="sortToggle" onchange="applyFilters()"> Сортувати за кімнатами (max)</label>
+            <hr>
+            <button style="width:100%" onclick="calculateTotal()">Підрахувати кімнати</button>
+            <p>Всього: <span id="totalDisplay">0</span></p>
+        </aside>
+        <main class="content-grid" id="hotelGrid"></main>
+    </div>
+
+    <script>
+
+        const initialHotels = [
+            { id: 1, title: "Grand Palace", desc: "Luxury resort", rooms: 150, type: "Resort" },
+            { id: 2, title: "Skyline Business", desc: "City center hotel", rooms: 45, type: "Business" },
+            { id: 3, title: "Ocean View", desc: "Beach side", rooms: 80, type: "Resort" }
+        ];
+
+        let displayData = [...initialHotels];
+
+        function renderHotels(data) {
+            const grid = document.getElementById('hotelGrid');
+            grid.innerHTML = ''; 
+
+            data.forEach(h => {
+                const card = document.createElement('div');
+                card.className = 'hotel-card';
+
+                card.innerHTML = `
+                    <div class="hotel-img-placeholder"></div>
+                    <div class="hotel-info">
+                        <h3>${h.title}</h3>
+                        <p>${h.desc}</p>
+                        <div class="hotel-stats">
+                            <span class="badge-rooms">${h.rooms} Rooms</span>
+                            <span class="badge-type">${h.type}</span>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }   
+
+        function applyFilters() {
+            const term = document.getElementById('searchInput').value.toLowerCase();
+
+            let filtered = initialHotels.filter(h => h.title.toLowerCase().includes(term));
+            
+            if (document.getElementById('sortToggle').checked) {
+                filtered.sort((a, b) => b.rooms - a.rooms);
+            }
+            
+            displayData = filtered;
+            renderHotels(displayData);
+        }
+
+        function handleSearch() { applyFilters(); }
+
+        function calculateTotal() {
+
+            const total = displayData.reduce((sum, h) => sum + h.rooms, 0);
+            document.getElementById('totalDisplay').innerText = total;
+        }
+
+        window.onload = () => renderHotels(displayData);
+    </script>
+</body>
+</html>
