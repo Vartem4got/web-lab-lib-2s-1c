@@ -276,125 +276,61 @@ body {
 
 @media (max-width: 992px) {
     .hero-content {
-        width: 80%; /* Більше простору для тексту */
+        width: 80%;
     }
-    
     .hero-content h1 { 
         font-size: 48px; 
     }
-    
     .layout-grid { 
         grid-template-columns: 1fr; 
         gap: 40px; 
         text-align: center; 
     }
-    
     .how-to-section .illustration-content { 
         order: 1; 
     }
 }
-
 @media (max-width: 768px) {
-
-    /* 1. Приховуємо контейнер з вантажівкою */
-
     .hero-truck-container {
-
         display: none;
-
     }
-
-
-
-    /* 2. Адаптуємо фон Hero-секції */
-
     .hero-section {
-
-        background-position: center center; /* Центруємо фон, коли немає машини */
-
-        width: 100%; /* На мобільних краще 100% */
-
-        margin-left: auto;
-
-        margin-right: auto;
-
-        text-align: center;
-
-        min-height: 80vh; /* Зменшуємо висоту для телефонів */
-
-    }
-
-
-
-    /* 3. Текст на всю ширину */
-
-    .hero-body {
-
-        justify-content: center;
-
-        padding-top: 60px;
-
-    }
-
-
-
-    .hero-content {
-
+        background-position: center center;
         width: 100%;
-
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        min-height: 80vh;
+    }
+    .hero-body {
+        justify-content: center;
+        padding-top: 60px;
+    }
+    .hero-content {
+        width: 100%;
         padding: 0 15px;
-
     }
-
-
-
     .hero-content h1 {
-
-        font-size: 36px; /* Ще менше для маленьких екранів */
-
+        font-size: 36px;
         line-height: 1.2;
-
     }
-
-
-
-    /* 4. Навігація */
-
     .navbar ul {
-
         display: none;
-
     }
-
-   
-
     .navbar {
-
-        justify-content: center; /* Центруємо лого, якщо немає меню */
-
+        justify-content: center;
     }
-
-
-
-    /* 5. Сітка клієнтів */
-
     .clients-grid {
-
         grid-template-columns: 1fr;
-
     }
-
     .burger { 
-        display: block !important; /* Показуємо бургер */
+        display: block !important;
     }
-
     .navbar { 
-        justify-content: space-between !important; /* Розсуваємо лого і бургер */
+        justify-content: space-between !important;
     }
-
-    /* Налаштування списку, коли він відкритий */
     .navbar ul.active {
-        display: flex !important; /* Показуємо меню при кліку */
+        display: flex !important;
         position: absolute;
         top: 60px;
         left: 0;
@@ -404,5 +340,4 @@ body {
         padding: 20px 0;
         z-index: 100;
     }
-
 }
