@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Management - Lab 4</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-item">Cataloge</div>
+        <div class="nav-item active" id="nav-list" onclick="showPage('list')">My Hotels</div>
+        <div class="nav-item" id="nav-create" onclick="showPage('create')">Create Hotel</div>
+    </header>
+
+    <div id="search-bar-ui" class="search-container">
+        <input type="text" id="searchInput" placeholder="Search by name...">
+        <button class="btn-search" onclick="handleSearch()">Search</button>
+        <button class="btn-clear" onclick="clearSearch()">Clear</button>
+    </div>
+
+    <div id="list-page" class="main-layout">
+        <aside class="sidebar">
+            <h2>Manage hotels</h2>
+            <div class="control-group">
+                <div class="switch-container">
+                    <span>Sort by rooms (max)</span>
+                    <label class="switch">
+                        <input type="checkbox" id="sortToggle" onchange="toggleSort()">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="control-group">
+                <p>Count total rooms:</p>
+                <button class="count-btn" onclick="calculateTotal()">Count</button>
+                <div style="margin-top: 15px;">Total: <span id="totalDisplay" style="font-weight: bold;">0</span></div>
+            </div>
+        </aside>
+        <main class="content-grid" id="hotelGrid"></main>
+    </div>
+
+    <div id="create-page" class="form-container">
+        <h1>Create new hotel</h1>
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" id="hotelTitle" placeholder="Hotel name (min 3 chars)..." required>
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea id="hotelDesc" rows="4" placeholder="Description..."></textarea>
+        </div>
+        <div class="form-group">
+            <label>Rooms Count</label>
+            <input type="number" id="hotelRooms" value="10">
+        </div>
+        <div class="form-group">
+            <label>Hotel Type</label>
+            <select id="hotelType">
+                <option value="Resort">Resort</option>
+                <option value="Business">Business</option>
+                <option value="Boutique">Boutique</option>
+            </select>
+        </div>
+        <button class="btn-submit" onclick="submitHotel()">Submit</button>
+    </div>
+
+    <div id="edit-page" class="form-container">
+        <h1>Edit hotel</h1>
+        <input type="hidden" id="editHotelId">
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" id="editHotelTitle">
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea id="editHotelDesc" rows="4"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Rooms Count</label>
+            <input type="number" id="editHotelRooms">
+        </div>
+        <div class="form-group">
+            <label>Hotel Type</label>
+            <select id="editHotelType">
+                <option value="Resort">Resort</option>
+                <option value="Business">Business</option>
+                <option value="Boutique">Boutique</option>
+            </select>
+        </div>
+        <button class="btn-submit" onclick="updateHotel()">Save Changes</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
