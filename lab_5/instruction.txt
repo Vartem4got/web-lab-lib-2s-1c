@@ -1,0 +1,24 @@
+
+
+--- How to properly show the work ---
+
+1 - Start app.py 
+its main server and saves info
+
+2 - Load the index.html 
+show the working site
+
+--- Interior ---
+
+css - inside of html
+index.html - site
+hotels_db.json - local Data Base
+
+humsters - tests of lab #3
+
+
+
+5 лаба !!!!!!!
+
+пошук і сорт на бекенді
+і каунт

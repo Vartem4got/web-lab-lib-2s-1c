@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "title": "bonga",
+        "desc": "onga",
+        "rooms": 10,
+        "type": "Resort"
+    },
+    {
+        "id": 2,
+        "title": "onga",
+        "desc": "bonga",
+        "rooms": 45,
+        "type": "Business"
+    },
+    {
+        "id": 3,
+        "title": "ronga",
+        "desc": "donga",
+        "rooms": 45,
+        "type": "Business"
+    },
+    {
+        "id": 1768489914639,
+        "title": "monga",
+        "desc": "nonga",
+        "rooms": 66,
+        "type": "Resort"
+    }
+]
