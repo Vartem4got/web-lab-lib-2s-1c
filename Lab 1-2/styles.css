@@ -1,0 +1,408 @@
+
+:root {
+    --primary-color: #EE4D47;
+    --dark-text: #333333;
+    --light-text: #FFFFFF;
+    --body-text: #6A6A6A;
+    --section-bg-light: #FDF9F8;
+    --quote-box-bg: #FEEFEE;
+    
+    --font-heading: 'DM Serif Display', serif;
+    --font-body: 'Rubik', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--dark-text);
+    background-color: #FFFFFF;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* ======================================== */
+/* 2. HEADER & HERO SECTION (FIXED)         */
+/* ======================================== */
+
+.hero-section {
+    position: relative;
+    background: url('images/background-scene.png') no-repeat right center;
+    background-size: cover; 
+    background-position-x: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+}
+
+.logo {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--light-text);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo::before {
+    content: '';
+    display: inline-block;
+    width: 0; height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 10px solid #fff;
+    transform: rotate(-45deg);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--light-text);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+}
+
+.navbar a:hover { opacity: 0.8; }
+
+.navbar .contact-btn {
+    background-color: #F2786D;
+    padding: 12px 28px;
+    border-radius: 5px;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.hero-body {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1; 
+    padding-bottom: 50px;
+}
+
+.hero-content {
+    width: 50%;
+    color: var(--light-text);
+    z-index: 10;
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 72px; 
+    line-height: 1;
+    margin-bottom: 30px;
+}
+
+.get-started-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #EE4D47; 
+    color: var(--light-text);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 18px 40px;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(238, 77, 71, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.get-started-btn:hover { transform: translateY(-3px); }
+.get-started-btn span { margin-left: 10px; font-size: 18px; }
+
+.hero-truck-container {
+    width: 75%;
+    position: relative;
+    bottom: -360px;
+    left: -65%;
+}
+
+.hero-truck {
+    width: 100%;
+    height: auto;
+}
+/* ======================================== */
+/* 3. CONTENT SECTIONS                      */
+/* ======================================== */
+.about-section, .how-to-section, .clients-section {
+    padding: 100px 0;
+}
+.about-section { background-color: var(--section-bg-light); }
+
+.layout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+}
+
+.section-title {
+    font-family: var(--font-body); 
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    color: var(--body-text);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.quote-box {
+    margin-top: 30px;
+    padding: 30px;
+    background-color: var(--quote-box-bg);
+    border-left: 4px solid var(--primary-color);
+}
+
+.quote-box p {
+    color: var(--dark-text); 
+    font-weight: 700;
+    font-family: var(--font-heading); 
+    font-size: 20px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.illustration-content img { max-width: 100%; height: auto; }
+.how-to-section .illustration-content { order: -1; } 
+
+.section-title.centered { text-align: center; font-size: 24px; color: var(--primary-color); margin-bottom: 60px; }
+.clients-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+
+.client-card {
+    background-color: #FFFFFF;
+    border: 1px solid #EEE;
+    border-radius: 10px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.client-card p { font-size: 14px; margin-bottom: 30px; }
+
+.client-info { display: flex; align-items: center; gap: 15px; }
+.client-info img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+.client-info span { font-weight: 700; color: var(--dark-text); font-size: 14px; }
+
+
+.clients-section h2 {
+    font-family: var(--font-heading);
+    font-size: 48px;
+    color: var(--dark-text);
+    text-transform: none;
+    letter-spacing: 0;
+}
+.clients-section .section-title.centered::before {
+    content: 'Out Awesome Clients';
+    display: block;
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+/* ======================================== */
+/* 4. FOOTER                                */
+/* ======================================== */
+.footer { background-color: var(--primary-color); padding: 40px 0; }
+.footer .container { display: flex; justify-content: space-between; align-items: center; }
+.footer .copyright { color: var(--light-text); font-size: 14px; font-weight: 500; }
+.social-links { display: flex; gap: 20px; }
+.social-links a img { width: 24px; filter: brightness(0) invert(1); }
+
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 100;
+}
+
+.burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--light-text);
+    transition: 0.3s;
+}
+
+/* ======================================== */
+/* 5. RESPONSIVE                            */
+/* ======================================== */
+
+@media (max-width: 992px) {
+    .hero-content {
+        width: 80%; /* Більше простору для тексту */
+    }
+    
+    .hero-content h1 { 
+        font-size: 48px; 
+    }
+    
+    .layout-grid { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+        text-align: center; 
+    }
+    
+    .how-to-section .illustration-content { 
+        order: 1; 
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* 1. Приховуємо контейнер з вантажівкою */
+
+    .hero-truck-container {
+
+        display: none;
+
+    }
+
+
+
+    /* 2. Адаптуємо фон Hero-секції */
+
+    .hero-section {
+
+        background-position: center center; /* Центруємо фон, коли немає машини */
+
+        width: 100%; /* На мобільних краще 100% */
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+        text-align: center;
+
+        min-height: 80vh; /* Зменшуємо висоту для телефонів */
+
+    }
+
+
+
+    /* 3. Текст на всю ширину */
+
+    .hero-body {
+
+        justify-content: center;
+
+        padding-top: 60px;
+
+    }
+
+
+
+    .hero-content {
+
+        width: 100%;
+
+        padding: 0 15px;
+
+    }
+
+
+
+    .hero-content h1 {
+
+        font-size: 36px; /* Ще менше для маленьких екранів */
+
+        line-height: 1.2;
+
+    }
+
+
+
+    /* 4. Навігація */
+
+    .navbar ul {
+
+        display: none;
+
+    }
+
+   
+
+    .navbar {
+
+        justify-content: center; /* Центруємо лого, якщо немає меню */
+
+    }
+
+
+
+    /* 5. Сітка клієнтів */
+
+    .clients-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .burger { 
+        display: block !important; /* Показуємо бургер */
+    }
+
+    .navbar { 
+        justify-content: space-between !important; /* Розсуваємо лого і бургер */
+    }
+
+    /* Налаштування списку, коли він відкритий */
+    .navbar ul.active {
+        display: flex !important; /* Показуємо меню при кліку */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #f2786d;
+        flex-direction: column;
+        padding: 20px 0;
+        z-index: 100;
+    }
+
+}

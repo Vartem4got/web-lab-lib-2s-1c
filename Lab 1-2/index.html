@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAFICO.</title>
+    
+    <link rel="stylesheet" href="styles.css"> 
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="hero-section">                                                                                                                                                                                                                                                                       
+        <div class="container" style="height: 100%; display: flex; flex-direction: column;">
+            
+            <nav class="navbar">
+                <div class="logo">TRAFICO.</div>
+    
+                <div class="burger" onclick="toggleMenu()" style="cursor:pointer; display:none;">
+                    <span style="display:block; width:25px; height:3px; background:#fff; margin:5px 0;"></span>
+                    <span style="display:block; width:25px; height:3px; background:#fff; margin:5px 0;"></span>
+                    <span style="display:block; width:25px; height:3px; background:#fff; margin:5px 0;"></span>
+                </div>
+
+                <ul id="nav-menu">
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#how-to">HOW TO</a></li>
+                    <li><a href="#faqs">FAQS</a></li>
+                    <li><a href="#contact" class="contact-btn">CONTACT US</a></li>
+                </ul>
+            </nav>  
+            <div class="hero-body">
+                <div class="hero-content">
+                    <h1>Your awesome<br>traffic permit<br>consultant.</h1>
+                    <a href="#" class="get-started-btn">GET STARTED <span>&#10230;</span></a>
+                </div>
+                <div class="hero-truck-container">
+                    <img src="images/car-image.png" alt="Delivery Truck and People" class="hero-truck">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="about-section">
+            <div class="container layout-grid">
+                <div class="text-content">
+                    <h2 class="section-title">ABOUT US</h2>
+                    <p>The occupational traffic permit is one of the most important things in the company when carrying out freight transport. In fact, it is a prerequisite for doing business traffic at all.</p>
+                    <div class="quote-box">
+                        <p>How do you do when you need to obtain a commercial traffic permit for freight transport to your business?</p>
+                    </div>
+                </div>
+                <div class="illustration-content">
+                    <img src="images/tree_place_holder.jpg" alt="About Illustration">
+                </div>
+            </div>
+        </section>
+
+        <section id="how-to" class="how-to-section">
+            <div class="container layout-grid">
+                <div class="illustration-content">
+                    <img src="images/tree_place_holder.jpg" alt="How To Illustration">
+                </div>
+                <div class="text-content">
+                    <h2 class="section-title">HOW TO APPLY</h2>
+                    <p>When applying for a traffic permit, there are certain requirements that you must meet that are included in the examination: requirements for professional knowledge, solid establishment, good reputation and financial resources. Important to remember is to confirm your application for a traffic permit by the company’s company signer or CEO.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="faqs" class="clients-section">
+            <div class="container">
+                <h2 class="section-title centered">Out Awesome Clients</h2>
+                <div class="clients-grid">
+                    <div class="client-card">
+                        <p>"Yes, you will need to have the land owner sign the permit application as the Permittee, and you sign the permit as the Applicant or Agent for the Permittee."</p>
+                        <div class="client-info">
+                            <img src="images/tree_place_holder.jpg" alt="Isak Pettersson">
+                            <span>Isak Pettersson</span>
+                        </div>
+                    </div>
+                    <div class="client-card">
+                        <p>"From most barricade or traffic control companies located in the phone book. They employ certified Traffic Control Supervisors (TCS) who can generate and certify the traffic control plan."</p>
+                        <div class="client-info">
+                            <img src="images/tree_place_holder.jpg" alt="Simon Sandberg">
+                            <span>Simon Sandberg</span>
+                        </div>
+                    </div>
+                    <div class="client-card">
+                        <p>"An A-Line, or access restriction deed is a property right that has been obtained by CDOT for the sole purpose of prohibiting direct."</p>
+                        <div class="client-info">
+                            <img src="images/tree_place_holder.jpg" alt="Isak Pettersson">
+                            <span>Isak Pettersson</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="copyright">Copyright © 2025</p>
+            <div class="logo">TRAFICO.</div>
+            <div class="social-links">
+                <a href="#"><img src="images/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="images/twitter-icon.png" alt="Twitter"></a>
+                <a href="#"><img src="images/instagram-icon.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    function toggleMenu() {
+        var menu = document.getElementById("nav-menu");
+        if (menu.classList.contains("active")) {
+            menu.classList.remove("active");
+        } else {
+                menu.classList.add("active");
+            }
+        }
+    </script>
+</body>
+</html>
